@@ -1,0 +1,7 @@
+span[user=message] {
+  color: blue;
+}
+
+span[user=message]:hover {
+  color: red;
+}
