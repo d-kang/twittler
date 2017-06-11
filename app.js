@@ -52,13 +52,15 @@ $( document ).ready (function() {
 
 
 
+  // $('div.allTweets').append('<div id="footer"></div>')
 
 
 
 
 
-
-
+  $('#bottom').on('click', (e) => {
+    e.preventDefault();
+  })
 
 
 
