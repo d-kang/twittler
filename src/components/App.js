@@ -30,7 +30,7 @@ class App extends Component {
 
         <Hello className="welcome-message"></Hello>
         <Button/>
-        <h1 className="tweets">{this.renderTweets()}</h1>
+        <div className="tweets">{this.renderTweets()}</div>
       </div>
     );
   }

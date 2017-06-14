@@ -10,7 +10,11 @@ class Button extends React.Component {
   render() {
     return (
       <div>
-        <button onClick={(e) => this.helloButton(e)}>Render Tweets</button>;
+
+        <form onClick={(e) => this.helloButton(e)} name="" action="index.html" method="post">
+          <input type="text" name="" value="" placeholder="what's happening?"/>
+          <input type="submit" name="" value="Render Tweets" />
+        </form>
       </div>
     )
 
