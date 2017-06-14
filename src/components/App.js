@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import Hello from './Hello'
 import Button from './Button'
-import logo from './logo.svg';
-import './App.css';
+
+import logo from '../logo.svg';
+import '../css/App.css';
+import { streams } from '../data_generator'
 
 class App extends Component {
+
   render() {
     return (
       <div className="App">
