@@ -5,19 +5,25 @@ import { streams } from '../data_generator'
 class Button extends React.Component {
   helloButton(event) {
     event.preventDefault();
-    console.log(streams.users)
+    console.log(streams.home[0].message)
+  }
+  renderTweets() {
+    return streams.home.map(function(home) {
+      return <div>@ {home.user}: {home.message} {String(home['created_at']).slice(17,24)}</div>
+    })
   }
   render() {
-    return <button onClick={(e) => this.helloButton(e)}>Say Hello</button>;
+    return (
+      <div>
+        <button onClick={(e) => this.helloButton(e)}>Render Tweets</button>;
+        <div className="allTweets">{this.renderTweets()}</div>
+      </div>
+    )
+
   }
 }
 
+export default Button
 
-function HelloButton() {
-  function handleClick() {
-    alert('Hello!');
-  }
-  return <Button onClick={handleClick} />;
-}
 
-export default HelloButton;
+// streams.home[0].message
