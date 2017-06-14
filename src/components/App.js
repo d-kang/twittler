@@ -16,7 +16,7 @@ class App extends Component {
   }
   renderTweets() {
     return streams.home.map(function(home) {
-      return <div>@ {home.user}: {home.message} {String(home['created_at']).slice(17,24)}</div>
+      return <div>@ <span className="username" user={home.user}>{home.user}</span>: {home.message} {String(home['created_at']).slice(17,24)}</div>
     })
   }
 
