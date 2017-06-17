@@ -34,12 +34,12 @@ const objects = ['my', 'your', 'the', 'a', 'my', 'an entire', 'this', 'that', 't
 const nouns = ['cat', 'koolaid', 'system', 'city', 'worm', 'cloud', 'potato', 'money', 'way of life', 'belief system', 'security system', 'bad decision', 'future', 'life', 'pony', 'mind'];
 const tags = ['#techlife', '#burningman', '#sf', 'but only i know how', 'for real', '#sxsw', '#ballin', '#omg', '#yolo', '#magic', '', '', '', ''];
 
-export function randomMessage(){
+function randomMessage(){
   return [randomElement(opening), randomElement(verbs), randomElement(objects), randomElement(nouns), randomElement(tags)].join(' ');
 };
 
 // generate random tweets on a random schedule
-export function generateRandomTweet(){
+function generateRandomTweet(){
   var tweet = {};
   tweet.user = randomElement(users);
   tweet.message = randomMessage();
@@ -53,7 +53,8 @@ for(var i = 0; i < 10; i++){
 
 var scheduleNextTweet = function(){
   generateRandomTweet();
-  //setTimeout(scheduleNextTweet, Math.random() * 15000);
+  // setTimeout(scheduleNextTweet, Math.random() * 15000);
+  console.log(new Date())
 };
 scheduleNextTweet();
 

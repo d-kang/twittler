@@ -1,15 +1,22 @@
+body {
+  background: #f3fafc;
+  height: 100%;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
 .App {
   text-align: center;
-  background: #f3fafc;
+
 }
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
-  height: 20px;
+  height: 50px;
 }
 
 .App-header {
-  background: #00a8ab;
+  background: ;
+  background: linear-gradient(90deg, #00a8ab, #ed56c5);
   height: 100px;
   padding: 20px;
   color: white;
@@ -26,8 +33,46 @@
 
 .tweets {
   color: #6b77bc;
+  margin: 20px;
+  padding: 20px;
+  font-size: 16px;
+
 }
 
+.username {
+  color: #00a8ab;
+
+}
 .username:hover {
-  color: #9f50c4;
+  color: #aa56d2;
+  text-decoration:underline;
+  text-decoration-color: #aa56d2;
+
+}
+
+.App-header > h2 {
+  color: #0d0f1e;
+
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+form {
+  margin: 5px;
+  padding: 5px;
+}
+
+.nav {
+  text-decoration: none;
+  padding: 5px 13px;
+  font-size: 15px;
+  color: #f3fafc;
+
+}
+
+.nav.1:hover {
+  text-decoration:underline;
 }

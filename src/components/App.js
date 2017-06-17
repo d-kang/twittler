@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import Hello from './Hello'
 import Button from './Button'
+import Header from './Header'
 
 
 
-import logo from '../logo.svg';
 import '../css/App.css';
 import { streams } from '../data_generator';
 
@@ -14,22 +14,30 @@ class App extends Component {
   helloButton() {
       alert('Hello!');
   }
+  getInitialState() {
+    return {count: 1}
+  }
+  addTweet() {
+    this.setState({count: this.state.count + 1})
+  }
   renderTweets() {
-    return streams.home.map(function(home) {
-      return <div>@ <span className="username" user={home.user}>{home.user}</span>: {home.message} {String(home['created_at']).slice(17,24)}</div>
+    return streams.home.map(function(home, i) {
+      return (
+        <div>
+        <li key={"tweet" + i}>  @ <span className="username" user={home.user}>{home.user}</span>: {home.message} {String(home['created_at']).slice(17,24)}
+      </li>
+        </div>
+      )
     })
   }
 
   render() {
     return (
       <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to Twittler</h2>
-        </div>
+        <Header />
 
-        <Hello className="welcome-message"></Hello>
-        <Button/>
+        {/* <Hello className="welcome-message"></Hello> */}
+        <Button id="main-button"/>
         <div className="tweets">{this.renderTweets()}</div>
       </div>
     );
