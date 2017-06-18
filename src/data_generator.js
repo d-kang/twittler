@@ -54,7 +54,7 @@ for(var i = 0; i < 10; i++){
 var scheduleNextTweet = function(){
   generateRandomTweet();
   // setTimeout(scheduleNextTweet, Math.random() * 15000);
-  console.log(new Date())
+  // console.log(new Date())
 };
 scheduleNextTweet();
 

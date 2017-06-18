@@ -9,9 +9,9 @@ class Header extends React.Component {
         <img src={logo} className="App-logo" alt="logo" />
         {/* <h2>Welcome to Twittler</h2> */}
         <div className="navbar">
-          <a href="#" className="nav 1">Friends</a>
-          <a href="#" className="nav 2">Timeline</a>
-          <a href="#" className="nav 3">Todo</a>
+          <a href="" className="nav 1">Friends</a>
+          <a href="" className="nav 2">Timeline</a>
+          <a href="" className="nav 3">Todo</a>
         </div>
       </div>
     )

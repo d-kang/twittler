@@ -76,3 +76,23 @@ form {
 .nav.1:hover {
   text-decoration:underline;
 }
+
+
+.divisor {
+  font-weight: bold;
+  font-size: 17px;
+  margin-bottom: 1px;
+  margin-top: 20px;
+  border-top: 4px solid #114da6;
+  clear: none;
+  padding-top: 20px;
+  padding-bottom: 9px;
+  border-bottom-width: 4px;
+  border-bottom-style: solid;
+  border-bottom-color: #114da6;
+
+}
+
+.streams {
+  font-size: 13px;
+}
