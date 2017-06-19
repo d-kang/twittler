@@ -1,16 +1,15 @@
 import React from 'react';
 import Header from './Header'
 import ArticleList from './ArticleList'
+import Clock from './Clock'
 import Footer from './Footer'
-import { streams } from '../data_generator';
+
 import '../css/App.css';
 
-const hi = () => console.log()
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      streams,
       foo: [0]
     };
     this.addMessage = this.addMessage.bind(this);
@@ -29,15 +28,14 @@ class App extends React.Component {
   }
 
   render() {
-    console.log('this.streams', JSON.stringify(this.state.streams, null, 2));
     return (
       <div className="App">
         <Header />
         <button onClick={this.addMessage}>Add Message</button>
-        <ArticleList messages={this.state.streams}/>
+        <ArticleList />
         <p>
-          {this.state.foo}
         </p>
+        <Clock />
         <Footer />
       </div>
     );

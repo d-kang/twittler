@@ -2,10 +2,13 @@ import React from 'react'
 
 class AddTweetForm extends React.Component {
   constructor(props) {
-    super(props)
-    this.submit = this.submit.bind(this)
+    super(props);
+    this.state = {
+      foo: [0]
+    };
+    //this.addMessage = this.addMessage.bind(this);
+    this.submit = this.submit.bind(this);
   }
-
   submit(e) {
     const { _name, _message } = this.refs
     e.preventDefault();
@@ -24,8 +27,7 @@ class AddTweetForm extends React.Component {
       )}
     )
     console.log('hi', _name.value, _message.value)
-    console.log('this.props.children', this.props.children);
-    console.log('this.state', this.state);
+    console.log('this.props.children', this.state);
   }
   render() {
       return (
