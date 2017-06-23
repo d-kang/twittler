@@ -1,52 +1,32 @@
 import React from 'react'
+import { addTweet } from '../data_generator';
 
-class AddTweetForm extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      foo: [0]
-    };
-    //this.addMessage = this.addMessage.bind(this);
-    this.submit = this.submit.bind(this);
-  }
-  submit(e) {
-    const { _name, _message } = this.refs
-    e.preventDefault();
+export default class AddTweetForm extends React.Component {
 
-    //this.refs.focus();
-    this.setState(
-      {message: (
-        <div>
-          <li>  @
-            <span className="username" user={_name.value}>
-              {_name.value}
-            </span>: {_message} {(new Date()).toLocaleTimeString()}
-          </li>
-        </div>
-
-      )}
-    )
-    console.log('hi', _name.value, _message.value)
-    console.log('this.props.children', this.state);
+  addMessage(e) {
+    e.preventDefault()
+    var tweetObj = {
+      "user": this.nameInput.value,
+      "message": this.msgInput.value,
+      "created_at": new Date()
+    }
+    addTweet(tweetObj)
+    console.log({...tweetObj});
   }
   render() {
       return (
         <div>
-          <form onSubmit={this.submit}>
-            <input ref="_name"
+          <form onSubmit={e => this.addMessage(e)}>
+            <input ref={(input) => this.nameInput = input}
               type="text"
               placeholder="name" required/>
-              <input ref="_message"
+              <input ref={(input) => this.msgInput = input}
                      type="text"
                      placeholder="what's happening?" required/>
-              <button>Add Tweet</button>
+                      <button>Add Tweet</button>
           </form>
-          <p>{this.props.children}</p>
 
         </div>
-
-      )
+    )
   }
 }
-
-export default AddTweetForm;

@@ -22,7 +22,7 @@ class ArticleList extends React.Component {
     return messages.home.map(function(home, i) {
       return (
         <div key={"tweet_" + i}>
-          @ <span className="username">{home.user}</span>: {home.message} {home['created_at'].toLocaleTimeString()}
+          @ <span className={'username ' + home.user}>{home.user}</span>: {home.message} {home['created_at'].toLocaleTimeString()}
         </div>
       )
     })

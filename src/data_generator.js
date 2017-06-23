@@ -17,6 +17,7 @@ const users = Object.keys(streams.users);
 // utility function for adding tweets to our data structures
 export function addTweet(newTweet){
   var username = newTweet.user;
+  streams.users[username] = streams.users[username] || [];
   streams.users[username].push(newTweet);
   streams.home.push(newTweet);
 };
@@ -53,7 +54,7 @@ for(var i = 0; i < 10; i++){
 
 var scheduleNextTweet = function(){
   generateRandomTweet();
-  setTimeout(scheduleNextTweet, Math.random() * 1500);
+  // setTimeout(scheduleNextTweet, Math.random() * 1500);
   // console.log(new Date())
 };
 scheduleNextTweet();
