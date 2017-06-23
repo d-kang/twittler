@@ -18,8 +18,8 @@ const users = Object.keys(streams.users);
 export function addTweet(newTweet){
   var username = newTweet.user;
   streams.users[username] = streams.users[username] || [];
-  streams.users[username].push(newTweet);
-  streams.home.push(newTweet);
+  streams.users[username].unshift(newTweet);
+  streams.home.unshift(newTweet);
 };
 
 // utility function

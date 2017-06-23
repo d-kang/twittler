@@ -17,12 +17,15 @@ class ArticleList extends React.Component {
   updateStreams() {
     this.setState( {streams} );
   }
-
+  userTweet(e) {
+    e.preventDefault();
+    console.log('hi')
+  }
   renderTweets(messages) {
     return messages.home.map(function(home, i) {
       return (
-        <div key={"tweet_" + i}>
-          @ <span className={'username ' + home.user}>{home.user}</span>: {home.message} {home['created_at'].toLocaleTimeString()}
+        <div key={i}>
+          @ <span onClick={e=> this.userTweet(e)} className={'username ' + home.user}>{home.user}</span>: {home.message} {home['created_at'].toLocaleTimeString()}
         </div>
       )
     })
