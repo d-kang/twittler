@@ -1,11 +1,10 @@
 import React from 'react';
-
+import Clock from './Clock'
 class Footer extends React.Component {
   render() {
     return (
       <div className='divisor'>
-        <p>I am the Footer</p>
-
+        <Clock date={this.props.date}/>
       </div>
     )
   }

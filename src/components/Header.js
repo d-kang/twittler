@@ -7,7 +7,6 @@ class Header extends React.Component {
     return (
       <div className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        {/* <h2>Welcome to Twittler</h2> */}
         <div className="navbar">
           <a href="" className="nav 1">Friends</a>
           <a href="" className="nav 2">Timeline</a>
