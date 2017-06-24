@@ -10,15 +10,17 @@ export default class App extends React.Component {
     super(props);
     this.state = {
       streams,
+      mracus: [],
       date: new Date()
     };
     this.renderTweets = this.renderTweets.bind(this)
+    this.foo = this.foo.bind(this)
   }
   componentDidMount() {
 
-    this.timerID = setInterval( () => this.setState({
-      date: new Date()
-    }), 1000 );
+    // this.timerID = setInterval( () => this.setState({
+    //   date: new Date()
+    // }), 1000 );
   }
 
   renderTweets(messages) {
@@ -31,7 +33,14 @@ export default class App extends React.Component {
        </div>
      )
    })
-
+  }
+  foo(a) {
+    var msg = this.state.streams.users.mracus.reduce( (acc ,item) => {acc.push(item.message); return acc}, [])
+    console.log(msg)
+    var copy = this.state.mracus.slice()
+    this.setState({
+      mracus: [...copy, ...msg]
+    })
   }
 
   render() {
@@ -44,6 +53,12 @@ export default class App extends React.Component {
           // this.state.streams.home.map( (msg, i) =>  <ArticleList streams={this.state.streams} renderTweets={this.renderTweets}/>)
         }
         <Footer date={this.state.date}/>
+        <button onClick={this.foo}>new Button</button>
+        <ul>
+          {
+            this.state.mracus.map((msg, i)=><li key={i}>{msg}</li>)
+          }
+        </ul>
       </div>
     );
   }
