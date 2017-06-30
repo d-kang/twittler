@@ -56,8 +56,10 @@ export default class App extends React.Component {
         <button onClick={this.foo}>new Button</button>
         <ul>
           {
-            this.state.mracus.map((msg, i)=><li key={i}>{msg}</li>)
+            this.state['mracus'].map((msg, i)=><li key={i}>{msg}</li>)
           }
+          {this.state.streams.home.filter((msg) => msg.user === 'mracus')
+          .map((msg, i) => <li key={i}>@ {msg.user}: {msg.message} {msg['created_at'].toLocaleTimeString()}</li>)}
         </ul>
       </div>
     );
