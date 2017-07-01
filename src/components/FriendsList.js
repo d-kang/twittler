@@ -1,30 +1,34 @@
 import React from 'react';
-import { HashRouter, Switch, Route, Link } from 'react-router-dom';
+import { Switch, Route, Link } from 'react-router-dom';
 import { StreamsAPI } from '../index'
 import Header from './Header'
 import { Welcome } from './Welcome'
 // The FullFriendsList iterates over all of the players and creates
 // a link to their profile page.
-export const FullFriendsList = () => (
-  <div>
-    <Welcome />
-    <ul>
-      {
-        StreamsAPI.all().reduce((acc, u) => {
-          if (acc.indexOf(u.user) === -1){
-            acc.push(u.user)
-          }
-          return acc;
-        }, [])
-        .map((u, i) => (
-          <li key={i}>
-            <Link to={`/friendslist/${u}`}>{u}</Link>
-          </li>
-        ))
-      }
-    </ul>
-  </div>
-)
+
+const FullFriendsList = props => {
+  return (
+    <div>
+      <Welcome />
+      <ul>
+        {console.log('this.props.all',props.all())}
+        {
+          props.all().reduce((acc, u) => {
+            if (acc.indexOf(u.user) === -1){
+              acc.push(u.user)
+            }
+            return acc;
+          }, [])
+          .map((u, i) => (
+            <li key={i}>
+              <Link to={`/friendslist/${u}`}>{u}</Link>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  )
+}
 
 
 // The Player looks up the player using the number parsed from
@@ -64,17 +68,19 @@ export const Friend = (props) => {
 
 
 
-
 // The Roster component matches one of two different routes
 // depending on the full pathname
-export const FriendsList = () => (
-  <div>
-    <Header />
-    {console.log(this.props)}
-    <Switch>
-      <Route exact path='/friendslist' component={() => <FullFriendsList/> } />
-      <Route path='/friendslist/:number' component={ () => <Friend/>  }/>
-    </Switch>
+export default class FriendsList extends React.Component {
+  render() {
+    return (
+      <div>
+        <Header />
+        <Switch>
+          <Route exact path='/friendslist' component={() => <FullFriendsList streams={this.props.streams} all={this.props.all} get={this.props.get}/> } />
+          <Route path='/friendslist/:number' component={Friend} />
+        </Switch>
 
-  </div>
-)
+      </div>
+    )
+  }
+}

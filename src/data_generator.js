@@ -9,6 +9,7 @@ export const streams = {};
 streams.home = [];
 streams.users = {};
 streams.users.shawndrost = [];
+streams.users.dkang = [];
 streams.users.sharksforcheap = [];
 streams.users.mracus = [];
 streams.users.douglascalhoun = [];

@@ -1,16 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/App';
-import Header from './components/Header';
 import './css/index.css';
 
-import { BrowserRouter } from 'react-router-dom';
+import FriendsList from './components/FriendsList'
 
-import { FullFriendsList, Friend, FriendsList  } from './components/FriendsList'
+
 import { Other } from './components/Other'
 import { streams } from './data_generator';
-import { HashRouter, Switch, Route, Link } from 'react-router-dom';
-// const { HashRouter, Switch, Route, Link } = ReactRouterDOM
+import { HashRouter, Switch, Route} from 'react-router-dom';
 
 // A simple data API that will be used to get the data for our
 // components. On a real website, a more robust data fetching
@@ -51,7 +49,7 @@ export const Comments = () => (
 // with /friendslist or /other. The / route will only match
 // when the pathname is exactly the string "/"
 
-{/* <Route path="/comments" component={() => (<Comments myProp="value" />)}/> */}
+ // <Route path="/comments" component={() => (<Comments myProp="value" />)}/>
 
 class Main extends React.Component {
   constructor(props) {

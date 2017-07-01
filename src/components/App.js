@@ -2,11 +2,9 @@ import React from 'react';
 import Header from './Header'
 import ArticleList from './ArticleList'
 import Footer from './Footer'
-import { streams } from '../data_generator';
 import '../css/App.css';
 import AddTweetForm from './AddTweetForm';
 import { Welcome } from './Welcome'
-import { HashRouter, Switch, Route, Link } from 'react-router-dom';
 
 
 export default class App extends React.Component {
@@ -67,11 +65,11 @@ export default class App extends React.Component {
   }
 }
 
-{/* <button onClick={this.foo}>new Button</button>
-<ul>
-  {
-    this.state['mracus'].map((msg, i)=><li key={i}>{msg}</li>)
-  }
-  {this.state.streams.home.filter((msg) => msg.user === 'mracus')
-  .map((msg, i) => <li key={i}>@ {msg.user}: {msg.message} {msg['created_at'].toLocaleTimeString()}</li>)}
-</ul> */}
+//<button onClick={this.foo}>new Button</button>
+//<ul>
+//  {
+//    this.state['mracus'].map((msg, i)=><li key={i}>{msg}</li>)
+//  }
+//  {this.state.streams.home.filter((msg) => msg.user === 'mracus')
+//  .map((msg, i) => <li key={i}>@ {msg.user}: {msg.message} {msg['created_at'].toLocaleTimeString()}</li>)}
+//</ul> 
