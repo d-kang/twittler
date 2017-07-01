@@ -70,9 +70,10 @@ export const Friend = (props) => {
 export const FriendsList = () => (
   <div>
     <Header />
+    {console.log(this.props)}
     <Switch>
-      <Route exact path='/friendslist' component={FullFriendsList}/>
-      <Route path='/friendslist/:number' component={Friend}/>
+      <Route exact path='/friendslist' component={() => <FullFriendsList/> } />
+      <Route path='/friendslist/:number' component={ () => <Friend/>  }/>
     </Switch>
 
   </div>

@@ -59,14 +59,22 @@ class Main extends React.Component {
     this.state = {
       streams
     }
+    this.all = this.all.bind(this)
+    this.get = this.get.bind(this)
   }
-
+  all() {
+    return this.state.streams.home
+  }
+  get(id) {
+    const isUser = u => u.user === id;
+    return this.home.find(isUser)
+  }
   render() {
     return (
       <main className="App-header">
         <Switch>
           <Route exact path='/' component={() => <App streams={this.state.streams} />}/>
-          <Route path='/friendslist' component={() => <FriendsList />} />
+          <Route path='/friendslist' component={() => <FriendsList streams={this.state.streams} all={this.all} get={this.get}/>} />
           <Route path='/other' component={ () => <Other myProp={this.state} />}/>
           <Route path="/comments" component={Comments}/>
 
