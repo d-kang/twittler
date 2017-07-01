@@ -7,6 +7,8 @@ import './css/index.css';
 import { BrowserRouter } from 'react-router-dom';
 
 import { FullFriendsList, Friend, FriendsList  } from './components/FriendsList'
+import { Other } from './components/Other'
+
 import { HashRouter, Switch, Route, Link } from 'react-router-dom';
 // const { HashRouter, Switch, Route, Link } = ReactRouterDOM
 
@@ -38,27 +40,12 @@ import { HashRouter, Switch, Route, Link } from 'react-router-dom';
   }
 
 
-  const Other = () => (
-    <div>
-      <Header />
-      <ul>
-        <li>1</li>
-        <li>2</li>
-        <li>3</li>
-      </ul>
-    </div>
-  )
 
-  const Home = () => (
-    <div>
-      <h1>Welcome to Twittler!</h1>
-    </div>
-  )
 
   // The Main component renders one of the three provided
-  // Routes (provided that one matches). Both the /roster
+  // Routes (provided that one matches). Both the /friendslist
   // and /other routes will match any pathname that starts
-  // with /roster or /other. The / route will only match
+  // with /friendslist or /other. The / route will only match
   // when the pathname is exactly the string "/"
 const Main = () => (
     <main className="App-header">
@@ -67,7 +54,6 @@ const Main = () => (
           <Route path='/friendslist' component={FriendsList}/>
           <Route path='/other' component={Other}/>
         </Switch>
-      {/* </div> */}
     </main>
   )
 
