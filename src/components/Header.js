@@ -19,9 +19,10 @@ class Header extends React.Component {
       <div className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <div className="navbar">
-            <a className="nav 1"><Link to='/' >Home</Link></a>
-            <a className="nav 2"><Link to='/friendslist' >Friends List</Link></a>
-            <a className="nav 3"><Link to='/other' >Other</Link></a>
+            <Link to='/' className="nav 1">Home</Link>
+            <Link to='/friendslist' className="nav 2">Friends List</Link>
+            <Link to='/other' className="nav 3">Other</Link>
+            <Link to='/other' className="nav 3">Other</Link>
         </div>
       </div>
     )

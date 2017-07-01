@@ -51,12 +51,16 @@ export default class App extends React.Component {
   render() {
     return (
       <div className="App">
+
         <Header />
         <AddTweetForm streams={this.props.streams}/>
         <ArticleList streams={this.state.streams} renderTweets={this.renderTweets}/>
         {
           // this.state.streams.home.map( (msg, i) =>  <ArticleList streams={this.state.streams} renderTweets={this.renderTweets}/>)
         }
+
+
+
         <Footer date={this.state.date}/>
         <button onClick={this.foo}>new Button</button>
         <ul>
