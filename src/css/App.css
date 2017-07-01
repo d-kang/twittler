@@ -14,12 +14,13 @@ body {
   height: 50px;
 }
 
-.App-header {
+div.App-header {
+  text-align: center;
   background: ;
   background: linear-gradient(90deg, #00a8ab, #ed56c5);
   height: 100px;
   padding: 20px;
-  color: white;
+  color: blue;
 }
 
 .App-intro {
@@ -69,7 +70,7 @@ form {
   text-decoration: none;
   padding: 5px 13px;
   font-size: 15px;
-  color: #f3fafc;
+  color: white;
 
 }
 

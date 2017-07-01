@@ -5,6 +5,17 @@ import Footer from './Footer'
 import { streams } from '../data_generator';
 import '../css/App.css';
 import AddTweetForm from './AddTweetForm';
+
+import { HashRouter, Switch, Route, Link } from 'react-router-dom';
+
+// import { Main } from '../index'
+
+
+
+
+
+
+
 export default class App extends React.Component {
   constructor(props) {
     super(props);
@@ -15,12 +26,6 @@ export default class App extends React.Component {
     };
     this.renderTweets = this.renderTweets.bind(this)
     this.foo = this.foo.bind(this)
-  }
-  componentDidMount() {
-
-    // this.timerID = setInterval( () => this.setState({
-    //   date: new Date()
-    // }), 1000 );
   }
 
   renderTweets(messages) {
