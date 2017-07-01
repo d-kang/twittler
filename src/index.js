@@ -8,7 +8,7 @@ import { BrowserRouter } from 'react-router-dom';
 
 import { FullFriendsList, Friend, FriendsList  } from './components/FriendsList'
 import { Other } from './components/Other'
-
+import { streams } from './data_generator';
 import { HashRouter, Switch, Route, Link } from 'react-router-dom';
 // const { HashRouter, Switch, Route, Link } = ReactRouterDOM
 
@@ -57,6 +57,7 @@ class Main extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
+      streams
     }
   };
   render() {

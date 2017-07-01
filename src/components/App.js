@@ -57,7 +57,7 @@ export default class App extends React.Component {
 
         <Header />
         <Welcome />
-        <AddTweetForm streams={this.props.streams}/>
+        <AddTweetForm streams={this.state.streams}/>
         <ArticleList streams={this.state.streams} renderTweets={this.renderTweets}/>
         {
           // this.state.streams.home.map( (msg, i) =>  <ArticleList streams={this.state.streams} renderTweets={this.renderTweets}/>)
