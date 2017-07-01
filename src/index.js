@@ -50,16 +50,42 @@ export const Comments = () => (
 // and /other routes will match any pathname that starts
 // with /friendslist or /other. The / route will only match
 // when the pathname is exactly the string "/"
-const Main = () => (
-  <main className="App-header">
-    <Switch>
-      <Route exact path='/' component={() => <App />}/>
-      <Route path='/friendslist' component={() => <FriendsList />} />
-      <Route path='/other' component={() => <Other myProp="hi"/>}/>
-      <Route path="/comments" component={() => (<Comments myProp="value" />)}/>
-    </Switch>
-  </main>
-)
+
+{/* <Route path="/comments" component={() => (<Comments myProp="value" />)}/> */}
+
+class Main extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+    }
+  };
+  render() {
+    return (
+      <main className="App-header">
+        <Switch>
+          <Route exact path='/' component={() => <App />}/>
+          <Route path='/friendslist' component={() => <FriendsList />} />
+          <Route path='/other' component={ () => <Other myProp={this.state} />}/>
+          <Route path="/comments" component={Comments}/>
+
+        </Switch>
+      </main>
+    )
+  }
+}
+
+
+// const Main = () => (
+//   <main className="App-header">
+//     <Switch>
+//       <Route exact path='/' component={() => <App />}/>
+//       <Route path='/friendslist' component={() => <FriendsList />} />
+//       <Route path='/other' component={ () => <Other myProp={this.state} />}/>
+//       <Route path="/comments" component={Comments}/>
+//
+//     </Switch>
+//   </main>
+// )
 
 ReactDOM.render((
   <HashRouter>
