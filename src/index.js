@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import App from './components/App';
 import './css/index.css';
 
-import FriendsList from './components/FriendsList'
+import { FriendsList } from './components/FriendsList'
 
 
 import { Other } from './components/Other'

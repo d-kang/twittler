@@ -1,9 +1,9 @@
 import React from 'react';
-import Header from './Header'
+import { Header } from './Header'
 import { Welcome } from './Welcome'
 
 
-export const Other = () => (
+export const Other = () =>
   <div>
     <Header />
     <Welcome />
@@ -13,4 +13,3 @@ export const Other = () => (
       <li>3</li>
     </ul>
   </div>
-)

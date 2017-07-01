@@ -1,7 +1,7 @@
 import React from 'react';
 import { Switch, Route, Link } from 'react-router-dom';
 import { StreamsAPI } from '../index'
-import Header from './Header'
+import { Header } from './Header'
 import { Welcome } from './Welcome'
 // The FullFriendsList iterates over all of the players and creates
 // a link to their profile page.
@@ -36,16 +36,13 @@ const FullFriendsList = props => {
 // number, then a "player not found" message is displayed.
 // Player => Player
 // player => player
-export const Friend = (props) => {
-  console.log(props)
+
+export const Friend = props => {
   const friend = StreamsAPI.get( props.match.params.number )
-  // const friend = StreamsAPI.all()[0]
-  console.log({friend})
   const date = new Date( JSON.parse( JSON.stringify(friend['created_at']) ) )
   if (!friend) {
     return <div>Sorry, but the friend was not found</div>
   }
-
   return (
     <div>
       <h1 className='welcome'>@{friend.user}</h1>
@@ -65,22 +62,17 @@ export const Friend = (props) => {
   )
 }
 
-
-
-
 // The Roster component matches one of two different routes
 // depending on the full pathname
-export default class FriendsList extends React.Component {
-  render() {
-    return (
-      <div>
-        <Header />
-        <Switch>
-          <Route exact path='/friendslist' component={() => <FullFriendsList streams={this.props.streams} all={this.props.all} get={this.props.get}/> } />
-          <Route path='/friendslist/:number' component={Friend} />
-        </Switch>
+export const FriendsList = props => {
+  return (
+    <div>
+      <Header />
+      <Switch>
+        <Route exact path='/friendslist' component={() => <FullFriendsList streams={props.streams} all={props.all} get={props.get}/> } />
+        <Route path='/friendslist/:number' component={Friend} />
+      </Switch>
 
-      </div>
-    )
-  }
+    </div>
+  )
 }

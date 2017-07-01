@@ -1,9 +1,9 @@
 import React from 'react';
-import Header from './Header'
-import ArticleList from './ArticleList'
-import Footer from './Footer'
+import { Header } from './Header'
+import { ArticleList } from './ArticleList'
+import { Footer } from './Footer'
 import '../css/App.css';
-import AddTweetForm from './AddTweetForm';
+import { AddTweetForm } from './AddTweetForm';
 import { Welcome } from './Welcome'
 
 
@@ -72,4 +72,4 @@ export default class App extends React.Component {
 //  }
 //  {this.state.streams.home.filter((msg) => msg.user === 'mracus')
 //  .map((msg, i) => <li key={i}>@ {msg.user}: {msg.message} {msg['created_at'].toLocaleTimeString()}</li>)}
-//</ul> 
+//</ul>
