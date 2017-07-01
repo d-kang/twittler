@@ -13,8 +13,6 @@ export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      streams,
-      mracus: [],
       date: new Date()
     };
     this.renderTweets = this.renderTweets.bind(this)
@@ -54,27 +52,26 @@ export default class App extends React.Component {
   render() {
     return (
       <div className="App">
-
         <Header />
         <Welcome />
-        <AddTweetForm streams={this.state.streams}/>
-        <ArticleList streams={this.state.streams} renderTweets={this.renderTweets}/>
+        <AddTweetForm streams={this.props.streams}/>
+        <ArticleList streams={this.props.streams} renderTweets={this.renderTweets}/>
         {
           // this.state.streams.home.map( (msg, i) =>  <ArticleList streams={this.state.streams} renderTweets={this.renderTweets}/>)
         }
 
-
-
         <Footer date={this.state.date}/>
-        <button onClick={this.foo}>new Button</button>
-        <ul>
-          {
-            this.state['mracus'].map((msg, i)=><li key={i}>{msg}</li>)
-          }
-          {this.state.streams.home.filter((msg) => msg.user === 'mracus')
-          .map((msg, i) => <li key={i}>@ {msg.user}: {msg.message} {msg['created_at'].toLocaleTimeString()}</li>)}
-        </ul>
+
       </div>
     );
   }
 }
+
+{/* <button onClick={this.foo}>new Button</button>
+<ul>
+  {
+    this.state['mracus'].map((msg, i)=><li key={i}>{msg}</li>)
+  }
+  {this.state.streams.home.filter((msg) => msg.user === 'mracus')
+  .map((msg, i) => <li key={i}>@ {msg.user}: {msg.message} {msg['created_at'].toLocaleTimeString()}</li>)}
+</ul> */}

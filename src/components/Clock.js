@@ -5,6 +5,7 @@ export default class Clock extends React.Component {
     return (
       <div>
         <h2>{this.props.date.toLocaleTimeString()}.</h2>
+        {/* {console.log(this.props.date.toLocaleTimeString())} */}
        </div>
     );
   }

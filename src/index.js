@@ -59,12 +59,13 @@ class Main extends React.Component {
     this.state = {
       streams
     }
-  };
+  }
+
   render() {
     return (
       <main className="App-header">
         <Switch>
-          <Route exact path='/' component={() => <App />}/>
+          <Route exact path='/' component={() => <App streams={this.state.streams} />}/>
           <Route path='/friendslist' component={() => <FriendsList />} />
           <Route path='/other' component={ () => <Other myProp={this.state} />}/>
           <Route path="/comments" component={Comments}/>
@@ -75,18 +76,6 @@ class Main extends React.Component {
   }
 }
 
-
-// const Main = () => (
-//   <main className="App-header">
-//     <Switch>
-//       <Route exact path='/' component={() => <App />}/>
-//       <Route path='/friendslist' component={() => <FriendsList />} />
-//       <Route path='/other' component={ () => <Other myProp={this.state} />}/>
-//       <Route path="/comments" component={Comments}/>
-//
-//     </Switch>
-//   </main>
-// )
 
 ReactDOM.render((
   <HashRouter>
