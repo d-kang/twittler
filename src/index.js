@@ -13,6 +13,9 @@ import { HashRouter, Switch, Route, Link } from 'react-router-dom';
   // A simple data API that will be used to get the data for our
   // components. On a real website, a more robust data fetching
   // solution would be more appropriate.
+
+
+  // sample data
   const StreamsAPI = {
     "home": [
       { user: "mracus", message: " installed your system #sf", created_at: "2017-06-23T17:26:37.538Z" },
@@ -34,9 +37,9 @@ import { HashRouter, Switch, Route, Link } from 'react-router-dom';
     }
   }
 
-  // The FullRoster iterates over all of the players and creates
+  // The FullFriendsList iterates over all of the players and creates
   // a link to their profile page.
-  const FullRoster = () => (
+  const FullFriendsList = () => (
     <div>
       <ul>
         {
@@ -61,24 +64,24 @@ import { HashRouter, Switch, Route, Link } from 'react-router-dom';
   // number, then a "player not found" message is displayed.
   // Player => Player
   // player => player
-  const Player = (props) => {
+  const Friend = (props) => {
     console.log(props)
-    const player = StreamsAPI.get( props.match.params.number )
-    // const player = StreamsAPI.all()[0]
-    console.log({player})
-    const date = new Date( JSON.parse( JSON.stringify(player['created_at']) ) )
-    if (!player) {
-      return <div>Sorry, but the player was not found</div>
+    const friend = StreamsAPI.get( props.match.params.number )
+    // const friend = StreamsAPI.all()[0]
+    console.log({friend})
+    const date = new Date( JSON.parse( JSON.stringify(friend['created_at']) ) )
+    if (!friend) {
+      return <div>Sorry, but the friend was not found</div>
     }
 
     return (
       <div>
-        <h1>@{player.user}</h1>
-        {/*<h2>Message: {player.message} Time: {date.toLocaleTimeString()}</h2>*/}
+        <h1>@{friend.user}</h1>
+        {/*<h2>Message: {friend.message} Time: {date.toLocaleTimeString()}</h2>*/}
         {
           StreamsAPI.all().reduce((acc, u, i) => {
-            console.log(u.user, player.user)
-            if (u.user === player.user) {
+            console.log(u.user, friend.user)
+            if (u.user === friend.user) {
               var msg = <h4 key={i}>Message: {u.message} Time: {date.toLocaleTimeString()}</h4>
               acc.push(msg);
             }
@@ -111,14 +114,14 @@ import { HashRouter, Switch, Route, Link } from 'react-router-dom';
     <div>
       <Header />
       <Switch>
-        <Route exact path='/friendslist' component={FullRoster}/>
-        <Route path='/friendslist/:number' component={Player}/>
+        <Route exact path='/friendslist' component={FullFriendsList}/>
+        <Route path='/friendslist/:number' component={Friend}/>
       </Switch>
 
     </div>
   )
 
-  const Schedule = () => (
+  const Other = () => (
     <div>
       <Header />
       <ul>
@@ -137,50 +140,22 @@ import { HashRouter, Switch, Route, Link } from 'react-router-dom';
 
   // The Main component renders one of the three provided
   // Routes (provided that one matches). Both the /roster
-  // and /schedule routes will match any pathname that starts
-  // with /roster or /schedule. The / route will only match
+  // and /other routes will match any pathname that starts
+  // with /roster or /other. The / route will only match
   // when the pathname is exactly the string "/"
 const Main = () => (
     <main className="App-header">
-      {/* <img src={logo} className="App-logo" alt="logo" /> */}
-      {/* <div className="navbar"> */}
         <Switch>
           <Route exact path='/' component={App}/>
           <Route path='/friendslist' component={FriendsList}/>
-          <Route path='/schedule' component={Schedule}/>
+          <Route path='/other' component={Other}/>
         </Switch>
       {/* </div> */}
     </main>
   )
 
-  // The Header creates links that can be used to navigate
-  // between routes.
-  // const Header = () => (
-  //   <header>
-  //     <nav>
-  //       <ul>
-  //         <li><Link to='/'>Home</Link></li>
-  //         <li><Link to='/roster'>Roster</Link></li>
-  //         <li><Link to='/schedule'>Schedule</Link></li>
-  //       </ul>
-  //     </nav>
-  //   </header>
-  // )
-
-  const MyApp = () => (
-    <div>
-      <Main />
-    </div>
-  )
-
   ReactDOM.render((
         <HashRouter>
-          <MyApp />
+          <Main />
         </HashRouter>
       ), document.getElementById('root'))
-
-// ReactDOM.render((
-//   <BrowserRouter>
-//     <App />
-//   </BrowserRouter>
-// ), document.getElementById('root'));
