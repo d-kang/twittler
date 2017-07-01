@@ -44,7 +44,7 @@ export const Friend = (props) => {
 
   return (
     <div>
-      <h1>@{friend.user}</h1>
+      <h1 className='welcome'>@{friend.user}</h1>
       {/*<h2>Message: {friend.message} Time: {date.toLocaleTimeString()}</h2>*/}
       {
         StreamsAPI.all().reduce((acc, u, i) => {

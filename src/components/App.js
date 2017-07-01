@@ -8,13 +8,6 @@ import AddTweetForm from './AddTweetForm';
 import { Welcome } from './Welcome'
 import { HashRouter, Switch, Route, Link } from 'react-router-dom';
 
-// import { Main } from '../index'
-
-
-
-
-
-
 
 export default class App extends React.Component {
   constructor(props) {
@@ -27,7 +20,17 @@ export default class App extends React.Component {
     this.renderTweets = this.renderTweets.bind(this)
     this.foo = this.foo.bind(this)
   }
-
+  componentDidMount() {
+    this.timerID = setInterval(
+      () => this.tick(),
+      1000
+    );
+  }
+  tick() {
+    this.setState({
+      date: new Date()
+    });
+  }
   renderTweets(messages) {
     // debugger;
    return messages.home.map((msg, i) => {
