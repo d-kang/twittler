@@ -2,10 +2,12 @@ import React from 'react';
 import { HashRouter, Switch, Route, Link } from 'react-router-dom';
 import { StreamsAPI } from '../index'
 import Header from './Header'
+import { Welcome } from './Welcome'
 // The FullFriendsList iterates over all of the players and creates
 // a link to their profile page.
 export const FullFriendsList = () => (
   <div>
+    <Welcome />
     <ul>
       {
         StreamsAPI.all().reduce((acc, u) => {
