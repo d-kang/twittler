@@ -11,6 +11,7 @@ import Friend from './Friend.jsx';
 const FriendsList = props => (
   <div>
     <Header />
+    <p>FriendsList1</p>
     <Switch>
       <Route
         exact path="/friendslist"
@@ -24,9 +25,10 @@ const FriendsList = props => (
       />
       <Route
         path="/friendslist/:number"
-        component={Friend}
+        component={(e) => <Friend e={e}/>}
       />
     </Switch>
+    <p>FriendsList2</p>
   </div>
 );
 

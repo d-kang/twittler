@@ -8,7 +8,9 @@ import Welcome from './Welcome.jsx';
 const FullFriendsList = props => (
   <div>
     <Welcome />
+    <p>FullFriendsList</p>
     <ul>
+      {console.log('FullFriendsList', {props})}
       {
         props.all().reduce((acc, u) => {
           if (acc.indexOf(u.user) === -1) {
