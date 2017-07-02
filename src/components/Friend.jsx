@@ -7,14 +7,27 @@ import { StreamsAPI } from '../index';
 
 const Friend = (props) => {
   console.log({props})
+
   // props.streams.get()
-  // const username = "";
+  const username = props.route.match.params.number;
+  // const userTweets = props.streams.users[username];
+  const userTweets = props.streams.users;
+  console.log({userTweets})
   // props.route.match.params.number;
   // const userTweets = props.streams.users.douglascalhoun;
-  const userTweets = props.streams
-  const result = props.renderTweets(userTweets);
+  const result = props.renderTweets(userTweets, username);
   console.log({result})
-  return result;
+
+  return (
+    <div>
+      <p>Friend</p>
+      <h1 className="welcome">@{username}</h1>
+      {
+        result
+      }
+      <Link to="/friendslist">Back</Link>
+    </div>
+  );
 }
 
 export default Friend;

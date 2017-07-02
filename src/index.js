@@ -65,8 +65,9 @@ class Main extends React.Component {
     const isUser = u => u.user === id;
     return this.home.find(isUser)
   }
-  renderTweets(messages) {
-    return messages.home.map((msg, i) => {
+  renderTweets(messages, user='home') {
+    const tweetList = messages[user]
+    return tweetList.map((msg, i) => {
       return (
         <div key={i}>
           @ <span onClick={this.userTweet} ref={(input) => { this.userSpan = input } } className={`username ${msg.user}`} id={msg.user}>{msg.user}</span>: {msg.message} {msg['created_at'].toLocaleTimeString()}
