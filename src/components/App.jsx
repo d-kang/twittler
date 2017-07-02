@@ -19,6 +19,9 @@ export default class App extends React.Component {
     this.timerID = setInterval(
       () => this.tick(), 1000);
   }
+  componentWillUnmount() {
+    clearInterval(this.timerID);
+  }
   tick() {
     this.setState({
       date: new Date(),
