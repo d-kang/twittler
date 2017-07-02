@@ -8,11 +8,10 @@ import { streams } from '../data_generator';
 
 
 export const Comments = () => (
-  <div className='welcome'>
+  <div className="welcome">
     <h1>Welcome!</h1>
   </div>
-)
-
+);
 
 
 // The Main component renders one of the three provided
@@ -23,7 +22,7 @@ export const Comments = () => (
 
  // <Route path="/comments" component={() => (<Comments myProp="value" />)}/>
 
- class Main extends React.Component {
+export default class Main extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -44,20 +43,12 @@ export const Comments = () => (
     const tweetList = messages[user];
     return tweetList.map((msg, i) => (
       <div key={i}>
-        @
-        <span
-          ref={(input) => {
-            this.userSpan = input;
-          }
-          }
+        @<span
+          ref={(input) => { this.userSpan = input; }}
           className={`username ${msg.user}`}
           id={msg.user}
-        >
-          {msg.user}
-        </span>
-        :
-        {msg.message}
-        {msg.created_at.fromNow()}
+        >{msg.user}</span>
+        : {msg.message} {msg.created_at.fromNow()}
       </div>
     ),
   );
@@ -101,5 +92,3 @@ export const Comments = () => (
     );
   }
 }
-
-export default Main;
