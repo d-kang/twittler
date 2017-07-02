@@ -1,9 +1,11 @@
+import moment from 'moment';
 /*
  * NOTE: This file generates fake tweet data, and is not intended to be part of your implementation.
  * You can safely leave this file untouched, and confine your changes to index.html.
  */
 
 // set up data structures
+
 
 export const streams = {};
 streams.home = [];
@@ -45,7 +47,7 @@ function generateRandomTweet(){
   var tweet = {};
   tweet.user = randomElement(users);
   tweet.message = randomMessage();
-  tweet.created_at = new Date();
+  tweet.created_at = moment();
   addTweet(tweet);
 };
 
@@ -56,7 +58,6 @@ for(var i = 0; i < 10; i++){
 var scheduleNextTweet = function(){
   generateRandomTweet();
   // setTimeout(scheduleNextTweet, Math.random() * 1500);
-  // console.log(new Date())
 };
 scheduleNextTweet();
 

@@ -1,13 +1,13 @@
 import React from 'react'
 import { addTweet } from '../data_generator';
-
+import moment from 'moment'
 const AddTweetForm = props => {
   const addMessage = (e) => {
     e.preventDefault()
     var tweetObj = {
       "user": this.nameInput.value,
       "message": this.msgInput.value,
-      "created_at": new Date()
+      "created_at": moment()
     }
     addTweet(tweetObj)
   }
