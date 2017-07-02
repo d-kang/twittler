@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { StreamsAPI } from '../index';
 // The Friend looks up the friend using the number parsed from
 // the URL's pathname. If no friend is found with the given
 // number, then a "friend not found" message is displayed.
