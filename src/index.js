@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/App';
+import App from './components/App.jsx';
 import './css/index.css';
 
-import { FriendsList } from './components/FriendsList'
+import { FriendsList } from './components/FriendsList.jsx'
 
 
-import { Other } from './components/Other'
+import Other from './components/Other.jsx'
 import { streams } from './data_generator';
 import { HashRouter, Switch, Route} from 'react-router-dom';
 

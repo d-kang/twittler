@@ -1,6 +1,9 @@
 import React from 'react';
 
-export const ArticleList = props =>
+const ArticleList = props => (
   <div>
     {props.renderTweets(props.streams)}
   </div>
+);
+
+export default ArticleList;

@@ -1,9 +1,9 @@
 import React from 'react';
-import { Header } from './Header'
-import { Welcome } from './Welcome'
+import Header from './Header.jsx';
+import Welcome from './Welcome.jsx';
 
 
-export const Other = () =>
+const Other = () => (
   <div>
     <Header />
     <Welcome />
@@ -13,3 +13,6 @@ export const Other = () =>
       <li>3</li>
     </ul>
   </div>
+);
+
+export default Other;
