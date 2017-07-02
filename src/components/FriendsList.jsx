@@ -30,6 +30,7 @@ const FriendsList = props => (
             streams={props.streams}
             all={props.all}
             get={props.get}
+            renderTweets={props.renderTweets}
           />}
       />
     </Switch>

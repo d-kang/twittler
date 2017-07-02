@@ -54,8 +54,9 @@ class Main extends React.Component {
     this.state = {
       streams
     }
-    this.all = this.all.bind(this)
-    this.get = this.get.bind(this)
+    this.all = this.all.bind(this);
+    this.get = this.get.bind(this);
+    this.renderTweets = this.renderTweets.bind(this);
   }
   all() {
     return this.state.streams.home
@@ -64,12 +65,21 @@ class Main extends React.Component {
     const isUser = u => u.user === id;
     return this.home.find(isUser)
   }
+  renderTweets(messages) {
+    return messages.home.map((msg, i) => {
+      return (
+        <div key={i}>
+          @ <span onClick={this.userTweet} ref={(input) => { this.userSpan = input } } className={`username ${msg.user}`} id={msg.user}>{msg.user}</span>: {msg.message} {msg['created_at'].toLocaleTimeString()}
+        </div>
+      );
+    });
+  }
   render() {
     return (
       <main className="App-header">
         <Switch>
-          <Route exact path='/' component={() => <App streams={this.state.streams} />}/>
-          <Route path='/friendslist' component={() => <FriendsList streams={this.state.streams} all={this.all} get={this.get}/>} />
+          <Route exact path='/' component={() => <App streams={this.state.streams} renderTweets={this.renderTweets}/>}/>
+          <Route path='/friendslist' component={() => <FriendsList streams={this.state.streams} all={this.all} get={this.get} renderTweets={this.renderTweets} />} />
           <Route path='/other' component={ () => <Other myProp={this.state} />}/>
           <Route path="/comments" component={Comments}/>
 

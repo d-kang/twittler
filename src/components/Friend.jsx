@@ -7,6 +7,14 @@ import { StreamsAPI } from '../index';
 
 const Friend = (props) => {
   console.log({props})
+  // props.streams.get()
+  // const username = "";
+  // props.route.match.params.number;
+  // const userTweets = props.streams.users.douglascalhoun;
+  const userTweets = props.streams
+  const result = props.renderTweets(userTweets);
+  console.log({result})
+  return result;
 }
 
 export default Friend;

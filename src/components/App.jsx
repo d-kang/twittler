@@ -13,7 +13,6 @@ export default class App extends React.Component {
     this.state = {
       date: new Date(),
     };
-    this.renderTweets = this.renderTweets.bind(this);
     this.foo = this.foo.bind(this);
   }
   componentDidMount() {
@@ -37,16 +36,7 @@ export default class App extends React.Component {
       mracus: [...copy, ...msg],
     });
   }
-  renderTweets(messages) {
-    // debugger;
-    return messages.home.map((msg, i) => {
-      return (
-        <div key={i}>
-          @ <span onClick={this.userTweet} ref={(input) => { this.userSpan = input } } className={`username ${msg.user}`} id={msg.user}>{msg.user}</span>: {msg.message} {msg['created_at'].toLocaleTimeString()}
-        </div>
-      );
-    });
-  }
+
 
 
   render() {
@@ -55,7 +45,7 @@ export default class App extends React.Component {
         <Header />
         <Welcome />
         <AddTweetForm streams={this.props.streams} />
-        <ArticleList streams={this.props.streams} renderTweets={this.renderTweets} />
+        <ArticleList streams={this.props.streams} renderTweets={this.props.renderTweets} />
         <Footer date={this.state.date} />
       </div>
     );
