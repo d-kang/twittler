@@ -25,7 +25,12 @@ const FriendsList = props => (
       />
       <Route
         path="/friendslist/:number"
-        component={(e) => <Friend e={e}/>}
+        component={(data) =>
+          <Friend route={data}
+            streams={props.streams}
+            all={props.all}
+            get={props.get}
+          />}
       />
     </Switch>
     <p>FriendsList2</p>
