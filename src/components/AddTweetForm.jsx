@@ -12,7 +12,7 @@ const AddTweetForm = props => {
     addTweet(tweetObj)
   }
       return (
-        <div>
+        <div id="tweetForm">
           <form onSubmit={e => addMessage(e)}>
             <input ref={(input) => this.nameInput = input}
               type="text"

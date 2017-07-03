@@ -1,7 +1,7 @@
 import React from 'react';
 
 const ArticleList = props => (
-  <div>
+  <div className="allTweets">
     {props.renderTweets(props.streams)}
   </div>
 );

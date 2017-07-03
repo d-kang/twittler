@@ -19,8 +19,8 @@ const Friend = (props) => {
   console.log({result})
 
   return (
-    <div>
-      <p>Friend</p>
+    <div className="friend">
+    {/* {  <p>Friend</p>} */}
       <h1 className="welcome">@{username}</h1>
       {
         result

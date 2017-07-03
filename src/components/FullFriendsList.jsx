@@ -8,7 +8,7 @@ import Welcome from './Welcome.jsx';
 const FullFriendsList = props => (
   <div>
     <Welcome />
-    <p>FullFriendsList</p>
+    {/* {<p>FullFriendsList</p>} */}
     <ul>
       {console.log('FullFriendsList', {props})}
       {
@@ -19,7 +19,7 @@ const FullFriendsList = props => (
           return acc;
         }, [])
         .map((u, i) => (
-          <li key={i}>
+          <li className="fullFriendsList" key={i}>
             <Link to={`/friendslist/${u}`}>{u}</Link>
           </li>
         ))

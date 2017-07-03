@@ -2,7 +2,7 @@ import React from 'react';
 
 const Clock = props => (
   <div>
-    <h2>{props.date.toLocaleTimeString()}.</h2>
+    <span id="clock">{props.date.toLocaleTimeString()}.</span>
   </div>
 );
 

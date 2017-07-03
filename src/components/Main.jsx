@@ -5,11 +5,12 @@ import App from './App.jsx';
 import FriendsList from './FriendsList.jsx';
 import Other from './Other.jsx';
 import { streams } from '../data_generator';
-
+import Header from './Header.jsx';
 
 export const Comments = () => (
-  <div className="welcome">
-    <h1>Welcome!</h1>
+  <div>
+    <Header />
+    <h1 className="welcome">Welcome!</h1>
   </div>
 );
 
@@ -48,7 +49,7 @@ export default class Main extends React.Component {
           className={`username ${msg.user}`}
           id={msg.user}
         >{msg.user}</span>
-        : {msg.message} {msg.created_at.fromNow()}
+        : {msg.message} <span id="time">{msg.created_at.fromNow()}</span>
       </div>
     ),
   );
